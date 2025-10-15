@@ -1,0 +1,21 @@
+{
+  "name": "小字体生成器 - 在线文本样式转换工具",
+  "short_name": "小字体生成器",
+  "description": "在线文本样式转换工具，支持多种特殊字体效果，包括小型大写字母、上标、下标、圆圈文字等",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["utilities", "productivity", "tools"],
+  "lang": "zh-CN",
+  "scope": "/",
+  "prefer_related_applications": false
+}
