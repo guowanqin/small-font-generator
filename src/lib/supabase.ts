@@ -78,16 +78,23 @@ export async function 记录使用(记录: { 输入文本: string; 转换样式:
   }
 }
 
+interface 使用记录项 {
+  输入文本: string;
+  转换样式: string;
+  转换结果: string;
+  创建时间: string;
+}
+
 export async function 获取使用统计(用户id?: string): Promise<{ 今日: number; 总计: number }> {
   try {
-    const 记录列表 = JSON.parse(localStorage.getItem('使用记录') || '[]')
+    const 记录列表: 使用记录项[] = JSON.parse(localStorage.getItem('使用记录') || '[]')
     const 今天开始 = new Date()
     今天开始.setHours(0, 0, 0, 0)
-    
-    const 今日记录 = 记录列表.filter((记录: any) => 
+
+    const 今日记录 = 记录列表.filter((记录: 使用记录项) =>
       new Date(记录.创建时间) >= 今天开始
     )
-    
+
     return {
       今日: 今日记录.length,
       总计: 记录列表.length

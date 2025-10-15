@@ -6,12 +6,12 @@ import { 支持的语言, 获取翻译, 检测默认语言 } from '@/lib/国际�
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { 保存用户配置, 获取用户配置, 记录使用, 获取使用统计 } from '@/lib/supabase'
 
-export default function 首页() {
+export default function HomePage() {
   const [输入文本, 设置输入文本] = useState('')
   const [复制状态, 设置复制状态] = useState<{ [key: string]: boolean }>({})
   const [当前语言, 设置当前语言] = useState('zh-CN')
   const [主题, 设置主题] = useState<'light' | 'dark'>('light')
-  const [用户, 设置用户] = useState<any>(null)
+  const [用户, 设置用户] = useState<{ id: string } | null>(null)
   const [使用统计, 设置使用统计] = useState({ 今日: 0, 总计: 0 })
   const [显示语言菜单, 设置显示语言菜单] = useState(false)
   const [演示文本] = useState('Hello World 你好世界')
